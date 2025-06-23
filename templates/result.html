@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Result</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Prediction Result</h1>
+      <img src="{{ image_file }}" alt="X-ray Image" class="result-img" />
+      <h2
+        class="result {{ 'positive' if label == 'PNEUMONIA' else 'negative' }}"
+      >
+        {{ label }}
+      </h2>
+      
+
+      <a href="/" class="btn">Try Another</a>
+    </div>
+  </body>
+</html>
